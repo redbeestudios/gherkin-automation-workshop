@@ -20,12 +20,12 @@ public class EjemploSteps {
     private static Object bookId;
     private static Response response;
 
-    @Dado("el id de un usuario existente")
+    @Dado("^el id de un usuario existente$")
     public void elIdDeUnusuarioExistente() {
         bookId = 2;
     }
 
-    @Cuando("se intenta obtener los datos del usuario")
+    @Cuando("^se intenta obtener los datos del usuario$")
     public void seIntentaObtenerLosDatosDelusuario() {
         HashMap<String, Object> queryParams = new HashMap<>();
         queryParams.put("id", bookId);
@@ -36,7 +36,7 @@ public class EjemploSteps {
 
         response = request.execute();
     }
-    @Entonces("se debe visualizar los datos del usuario solicitado")
+    @Entonces("^se debe visualizar los datos del usuario solicitado$")
     public void seDebeVisualizarLosDatosDelusuarioSolicitado() {
         Assertions.assertEquals(200,response.statusCode(),"El Status Code debe ser 200");
 
@@ -46,13 +46,13 @@ public class EjemploSteps {
         Assertions.assertEquals("Weaver", JsonPath.from(jsonString).getString("data.last_name"),"El apellido debe ser igual al esperado");
     }
 
-    @Dado("el id de un usuario existente igual a {int}")
+    @Dado("^el id de un usuario existente igual a (\\d+)$")
     public void el_id_de_un_usuario_existente_igual_a(Integer id) {
         bookId = id;
     }
 
 
-    @Entonces("se debe visualizar los datos del usuario {string} {string}")
+    @Entonces("^se debe visualizar los datos del usuario (.*) (.*)$")
     public void seDebeVisualizarLosDatosDelusuarioNombreApellido(String nombre, String apellido) {
         Assertions.assertEquals(200,response.statusCode(),"El Status Code debe ser 200");
 

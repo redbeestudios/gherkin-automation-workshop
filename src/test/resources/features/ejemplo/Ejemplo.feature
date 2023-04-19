@@ -15,6 +15,6 @@ Característica: Ejemplo
     Entonces se debe visualizar los datos del usuario <nombre> <apellido>
 
     Ejemplos:
-      | id | nombre   | apellido |
-      | 1  | "George" | "Bluth"  |
-      | 2  | "Janet"  | "Weaver" |
+      | id | nombre | apellido |
+      | 1  | George | Bluth    |
+      | 2  | Janet  | Weaver |
