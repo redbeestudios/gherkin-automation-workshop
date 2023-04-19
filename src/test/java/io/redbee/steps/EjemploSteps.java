@@ -61,4 +61,6 @@ public class EjemploSteps {
         Assertions.assertEquals(nombre, JsonPath.from(jsonString).getString("data.first_name"),"El nombre debe ser igual al esperado");
         Assertions.assertEquals(apellido, JsonPath.from(jsonString).getString("data.last_name"),"El apellido debe ser igual al esperado");
     }
+
+
 }

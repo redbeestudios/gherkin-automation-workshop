@@ -18,7 +18,6 @@ Característica: Practica
   Escenario: Creación de un usuario nuevo
 
     Dado un usuario no registrado
-    Y todos los datos de registro válidos
     Cuando se intenta crear un usuario
     Entonces el usuario de crea correctamente
 
@@ -58,15 +57,14 @@ Característica: Practica
   Escenario: Password Incorrecto
 
     Dado que soy un usuario registrado
-    E un password incorrecto
+    Y un password incorrecto
     Cuando se intenta iniciar sesión
     Entonces se debe visualizar el error de credenciales incorrecta
 
 
   Escenario: Creación de un usuario que ya existe
 
-    Dado un usuario no registrado
-    Y un email ya existente
+    Dado un usuario registrado
     Cuando se intenta crear un usuario
     Entonces se debe visualizar el error de email ya existente
 
